@@ -1,0 +1,20 @@
+<h1> Users</h1>
+<br><br>
+
+<div class="talent_lists_main_div">
+    <% @talents.each do |talent| %>
+        <div class="talent_lists_child_div">
+                <img class="talent_images" src="<%=talent.image %>">
+                <img class="talent_images">
+                <div class="talent_lists"><%= talent.user_name %></div>
+            <% talent.talent_reviews.reverse.each do |review| %>
+                <div class="talent_lists">
+                    <p><%= review.reviews %></p>
+                    <p>Reviewed by: <%= review.host.user_name %></p>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>
+
+

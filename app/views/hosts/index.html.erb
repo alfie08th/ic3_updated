@@ -1,0 +1,7 @@
+<h1><%= @hosts.first.user_name %></h1>
+
+<% @hosts.each do |host| %>
+    <% host.host_reviews.each do |review| %>
+        <p><%= review.reviews %></p>
+    <% end %>
+<% end %>

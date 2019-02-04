@@ -1,0 +1,24 @@
+<h1><%= @talents.first.user_name %></h1>
+<br><br>
+
+<div class="talent_lists_main_div">
+    <div id="talent_lists_format_child_div">
+        <% @talents.each do |talent| %>
+            <div class="talent_lists_child_div">
+                <!-- <img class="talent_images" src="<%=talent.image %>"> -->
+                <img class="talent_images">
+                <div class="talent_lists"><%= talent.user_name %></div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="talent_reviews_main_div">
+    <% @talents.each do |talent| %>
+        <div class="talent_reviews">
+            <% talent.talent_reviews.each do |review| %>
+                <p><%= review.reviews %></p></p>
+            <% end %>
+        </div>
+    <% end %>
+</div>
