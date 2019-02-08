@@ -15,7 +15,7 @@ i = 0
         host.user_name = Faker::Name.unique.name
         host.dob = Faker::Date.birthday(48, 99)
         host.fee = Faker::Number.between(100, 1000)
-        host.location = Faker::Nation.capital_city
+        host.location = Faker::Address.state_abbr
         host.talent_needed = Faker::Job.title
         host.host_review_id = i
         host.talent_id = i
@@ -31,18 +31,11 @@ i = 0
         talent.user_name = Faker::Name.unique.name
         talent.dob = Time.now
         talent.fee = Faker::Number.between(100, 1000)
-        talent.location = Faker::Nation.capital_city
+        talent.location = Faker::Address.state_abbr
         talent.talent_offered = Faker::Job.title
         talent.host_id = i
         talent.talent_review_id = i
 
-
-
-            # j = 0
-            # 9.times do
-            #     talent.host_id = j
-            #     j+=1
-            # end
 
     end
         HostReview.create do |host_rev|

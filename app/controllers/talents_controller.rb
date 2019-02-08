@@ -7,8 +7,8 @@ skip_before_action :search_navdiv, :only => :profile
   end
 
   def create
-    @talents = Talent.find(params[:id])
-    redirect_to '/talent_filter'
+    # @talents = Talent.find(params[:id])
+    # redirect_to '/talent_filter'
   end
 
   def profile
@@ -18,10 +18,11 @@ skip_before_action :search_navdiv, :only => :profile
   end
 
   def search 
-    if params[:search].blank?
-      @talents=Talent.all
+    if params[:search].blank? and params[:state_select].blank?
+      @talents = Talent.all
     else
-      @talents = Talent.search(params)  
+      @talents = Talent.search(params)
+      value = params[:search]
     end
   end
 

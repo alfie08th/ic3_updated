@@ -141,3 +141,7 @@ end
         <button class="ui button"  type="submit"> Submit </button>
   </div>
 </form>
+
+ <% if @search_navdiv %>
+      <%= render 'shared/search_navdiv' %>
+  <% end %>

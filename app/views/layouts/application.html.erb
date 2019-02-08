@@ -31,16 +31,18 @@
   <div id="below_nav_divider" class="ui inverted divider"></div>
 
 
-    <% if @search_navdiv %>
-        <%= render 'shared/search_navdiv' %>
-    <% end %>
+  <% if @search_navdiv %>
+    <%= render 'shared/search_navdiv', locals: {ser: @ser, state: @state}%>
+  <% end %>
 
   <div id="main_content">
     <div id="yield_content">
         <%= yield %>
     </div>
-    <%= render 'shared/these_footer' %>
   </div>
+  
+  
+  <%= render 'shared/these_footer' %>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
