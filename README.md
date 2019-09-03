@@ -41,7 +41,25 @@ search filter
 https://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/
 <<<<<<< HEAD
 
-
+###How to use faker.js
+``` html
+add this before your main js:
+<script src="https://rawgit.com/Marak/faker.js/master/examples/browser/js/faker.js" type = "text/javascript"></script>
+```
+By doing so will allow your app to get faker.js file from the web and let you use those features:
+- In Html
+    ``` html
+    <script> 
+      var randomName = faker.name.findName();
+      console.log(randomName)
+    </script> // Caitlyn Kerluke
+    ```
+- In Javascript
+    ``` js
+      var randomName = faker.name.findName();
+      console.log(randomName)
+    ```
+#
 
 <%= form_for @snippet do |f| %>
 

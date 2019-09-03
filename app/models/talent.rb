@@ -8,11 +8,11 @@ class Talent < ApplicationRecord
                 talents = Talent.where("talent_offered LIKE (?) and location LIKE (?)", "%#{params[:search]}%", "%#{params[:state_select]}%")
             else
                 talents = Talent.where("talent_offered LIKE (?)", "%#{params[:search]}%") 
-            end        
+            end       
 
         else    
             talents = Talent.where("location LIKE (?)", "%#{params[:state_select]}%")
         end
-
+        
     end         
 end

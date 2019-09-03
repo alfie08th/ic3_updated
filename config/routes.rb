@@ -32,5 +32,7 @@ post '/talent' => 'talents#show'
 
 get '/talent_create' => 'talents#create'
 
+get 'show' =>'talents#show'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

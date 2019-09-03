@@ -4,6 +4,7 @@ abbr= "AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, M
 state= "Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming"
 
 
+
 abbr = abbr.replace(/,/g,'') //removing the comma in the string
 abbr = abbr.split(' ') // joining them together with two word each
 
@@ -14,7 +15,6 @@ $(document).ready(function() {
     $('.ui.dropdown').dropdown();
   });
   
-
 function processUser()
 {
   var parameters = location.search.substring(1).split("&");
@@ -56,3 +56,9 @@ function processUser()
 
 window.onload = processUser;
 
+var talent_image = document.getElementsByClassName('talent_images')
+width = 400;
+height = 400;
+for(var i in talent_image){
+  talent_image[i].src=faker.image.imageUrl(width,height,"people");
+}
